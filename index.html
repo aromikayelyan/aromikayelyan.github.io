@@ -2,204 +2,232 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Портфолио Арарата</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ararat Mikayelyan | Backend Developer</title>
   <style>
     body {
-      font-family: 'Arial', sans-serif;
+      font-family: 'Courier New', monospace;
+      background-color: #1e1e1e;
+      color: #e0e0e0;
       max-width: 900px;
       margin: 40px auto;
       padding: 20px;
-      line-height: 1.6;
-      background-color: #f4f4f9;
-      color: #333;
     }
-    h1 {
-      font-size: 2.5em;
-      color: #333;
-      text-align: center;
-      margin-bottom: 20px;
+    h1, h2 {
+      color: #00adb5;
+      border-left: 4px solid #00adb5;
+      padding-left: 10px;
     }
-    h2 {
-      color: #333;
-      font-size: 1.8em;
-      margin-top: 40px;
-      border-bottom: 2px solid #0077cc;
-      padding-bottom: 5px;
-    }
+    h1 { font-size: 2.2em; margin-bottom: 20px; }
+    h2 { font-size: 1.6em; margin-top: 40px; margin-bottom: 15px; }
+    p { line-height: 1.6; }
     .project {
-      background-color: #fff;
+      background-color: #2c2c2c;
       padding: 15px;
       margin-bottom: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-left: 3px solid #00adb5;
     }
     .project a {
-      color: #0077cc;
+      color: #00adb5;
       text-decoration: none;
     }
     .project a:hover {
       text-decoration: underline;
     }
-    .contact-info li {
-      font-size: 1.2em;
-      margin-bottom: 10px;
-    }
-    .cv-btn {
-      padding: 10px 20px;
-      background-color: #0077cc;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      display: inline-block;
-      margin-top: 20px;
-    }
-    .cv-btn:hover {
-      background-color: #005fa3;
-    }
-    .section-title {
-      font-weight: bold;
-    }
-    .contact-info {
+    .contact-info, .social-links {
       list-style-type: none;
       padding: 0;
     }
-    .contact-info a {
-      color: #0077cc;
+    .contact-info li, .social-links li {
+      margin-bottom: 10px;
+    }
+    .contact-info a, .social-links a {
+      color: #00adb5;
+      text-decoration: none;
+    }
+    .contact-info a:hover, .social-links a:hover {
+      text-decoration: underline;
+    }
+    .cv-btn {
+      padding: 10px 20px;
+      background-color: #00adb5;
+      color: #1e1e1e;
+      text-decoration: none;
+      border-radius: 3px;
+      display: inline-block;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    .cv-btn:hover {
+      background-color: #008f99;
+    }
+    .lang-toggle {
+      text-align: right;
+      margin-bottom: 30px;
+    }
+    .lang-toggle button {
+      background: none;
+      border: 1px solid #00adb5;
+      color: #00adb5;
+      padding: 6px 12px;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.9em;
+    }
+    .lang-toggle button:hover {
+      background-color: #00adb5;
+      color: #1e1e1e;
+    }
+    [data-lang] {
+      display: none;
+    }
+    [data-lang="ru"].active,
+    [data-lang="en"].active {
+      display: block;
     }
   </style>
 </head>
 <body>
 
-  <h1>Привет! Я Арарат 👋</h1>
-  <p>Я бэкенд-разработчик с опытом работы в Node.js. На этой странице вы найдете информацию о моих проектах, а также мои контактные данные.</p>
+  <div class="lang-toggle">
+    <button onclick="setLang('ru')">RU</button>
+    <button onclick="setLang('en')">EN</button>
+  </div>
 
-  <!-- Раздел "О себе" -->
-  <section>
-    <h2>О себе</h2>
-    <p>Я начинающий бэкенд-разработчик, обладающий навыками работы с Node.js, MongoDB, RESTful API и другими современными технологиями. Стремлюсь к решению сложных задач и постоянно развиваюсь в области программирования.</p>
-  </section>
+  <!-- Russian -->
+  <div data-lang="ru" class="active">
+    <h1>Привет! Я Арарат 👋</h1>
+    <p>Я бэкенд-разработчик с опытом работы в Node.js. На этой странице вы найдете информацию о моих проектах, а также мои контактные данные.</p>
 
-  <!-- Раздел "Проекты" -->
-  <section>
-    <h2>💼 Мои проекты</h2>
+    <section>
+      <h2>О себе</h2>
+      <p>Я начинающий бэкенд-разработчик, обладающий навыками работы с Node.js, MongoDB, RESTful API и другими современными технологиями. Стремлюсь к решению сложных задач и постоянно развиваюсь в области программирования.</p>
+    </section>
 
-    <!-- Проект 1 -->
-    <div class="project">
-      <strong>JewelsStore</strong><br />
-      <a href="https://github.com/aromikayelyan/jewel-store/tree/main" target="_blank">GitHub репозиторий</a>
-      <p>Полный стек: фронт + бэк. Магазин ювелирных изделий с полноценной авторизацией, товарами и заказами.</p>
-    </div>
+    <section>
+      <h2>💼 Мои проекты</h2>
 
-    <!-- Проект 2 -->
-    <div class="project">
-      <strong>Аутентификация (API)</strong><br />
-      <a href="https://github.com/aromikayelyan/Node.js-Authentication-API" target="_blank">GitHub репозиторий</a>
-      <p>Бэкенд для системы аутентификации с тремя запросами в Insomnia.</p>
-    </div>
+      <div class="project">
+        <strong>JewelsStore</strong><br />
+        <a href="https://github.com/aromikayelyan/jewel-store/tree/main" target="_blank">GitHub репозиторий</a>
+        <p>Полный стек: фронт + бэк. Магазин ювелирных изделий с полноценной авторизацией, товарами и заказами.</p>
+      </div>
 
-    <!-- Проект 3 -->
-    <div class="project">
-      <strong>Сервисы учёта и истории (API)</strong><br />
-      <a href="https://github.com/aromikayelyan/market-users-service/tree/main/market_service" target="_blank">GitHub репозиторий</a>
-      <p>Сервисы учёта остатков товаров и логирования изменений остатков.</p>
-    </div>
+      <div class="project">
+        <strong>Аутентификация (API)</strong><br />
+        <a href="https://github.com/aromikayelyan/Node.js-Authentication-API" target="_blank">GitHub репозиторий</a>
+        <p>Бэкенд для системы аутентификации с тремя запросами в Insomnia.</p>
+      </div>
 
-    <!-- Проект 4 -->
-    <div class="project">
-      <strong>Сервис пользователей (Nest.js)</strong><br />
-      <a href="https://github.com/aromikayelyan/market-users-service/tree/main/users_serivce" target="_blank">GitHub репозиторий</a>
-      <p>API для работы с пользователями, включая создание и получение данных пользователей.</p>
-    </div>
+      <div class="project">
+        <strong>Сервисы учёта и истории</strong><br />
+        <a href="https://github.com/aromikayelyan/market-users-service/tree/main/market_service" target="_blank">GitHub репозиторий</a>
+        <p>Учёт остатков товаров и логирование изменений остатков.</p>
+      </div>
 
-    <!-- Проект 5 -->
-    <div class="project">
-      <strong>GetRepositories</strong><br />
-      <a href="https://github.com/aromikayelyan/GetRepositories" target="_blank">GitHub репозиторий</a>
-      <p>Приложение для работы с GitHub API: получение популярных репозиториев и сохранение их в базе данных.</p>
-    </div>
+      <div class="project">
+        <strong>Сервис пользователей (Nest.js)</strong><br />
+        <a href="https://github.com/aromikayelyan/market-users-service/tree/main/users_serivce" target="_blank">GitHub репозиторий</a>
+        <p>API для работы с пользователями, включая создание и получение данных.</p>
+      </div>
 
-  </section>
+      <div class="project">
+        <strong>GetRepositories</strong><br />
+        <a href="https://github.com/aromikayelyan/GetRepositories" target="_blank">GitHub репозиторий</a>
+        <p>Приложение для получения популярных репозиториев с GitHub и сохранения их в базу данных.</p>
+      </div>
 
-  <!-- Раздел "Контакты" -->
-  <section>
-    <h2>📫 Контакты</h2>
-    <ul class="contact-info">
-      <li class="section-title">Email:</li>
-      <li><a href="mailto:aromiq1@gmail.com">Моя эл. почта</a></li>
-      <li class="section-title">WhatsApp:</li>
-      <li><a href="https://wa.me/+79180932204" target="_blank">Написать мне в WhatsApp</a></li>
-    </ul>
+    </section>
 
-    <!-- Кнопка для скачивания CV -->
-    <a href="./Resume.pdf" class="cv-btn" download>Скачать CV</a>
-  </section>
+    <section>
+      <h2>📫 Контакты</h2>
+      <ul class="contact-info">
+        <li><strong>Email:</strong> <a href="mailto:aromiq1@gmail.com">aromiq1@gmail.com</a></li>
+        <li><strong>WhatsApp:</strong> <a href="https://wa.me/+79180932204" target="_blank">Написать в WhatsApp</a></li>
+      </ul>
 
+      <h2>🌐 Социальные сети</h2>
+      <ul class="social-links">
+        <li><a href="https://t.me/aromikayelyan" target="_blank">Telegram</a></li>
+        <li><a href="https://github.com/aromikayelyan" target="_blank">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/ararat-mikayelyan-6aaa80314" target="_blank">LinkedIn</a></li>
+      </ul>
 
+      <a href="./Resume.pdf" class="cv-btn" download>Скачать CV</a>
+    </section>
+  </div>
 
-  <h1>Hello! I'm Ararat 👋</h1>
-  <p>I'm a backend developer with experience in Node.js. On this page, you can find information about my projects and contact details.</p>
+  <!-- English -->
+  <div data-lang="en">
+    <h1>Hello! I'm Ararat 👋</h1>
+    <p>I'm a backend developer with experience in Node.js. On this page, you can find information about my projects and contact details.</p>
 
-  <!-- About Section -->
-  <section>
-    <h2>About Me</h2>
-    <p>I'm a beginner backend developer with skills in Node.js, MongoDB, RESTful APIs, and other modern technologies. I enjoy solving complex problems and constantly developing my skills in programming.</p>
-  </section>
+    <section>
+      <h2>About Me</h2>
+      <p>I'm a beginner backend developer with skills in Node.js, MongoDB, RESTful APIs, and other modern technologies. I enjoy solving complex problems and constantly developing my programming skills.</p>
+    </section>
 
-  <!-- Projects Section -->
-  <section>
-    <h2>💼 My Projects</h2>
+    <section>
+      <h2>💼 My Projects</h2>
 
-    <!-- Project 1 -->
-    <div class="project">
-      <strong>JewelsStore</strong><br />
-      <a href="https://github.com/aromikayelyan/jewel-store/tree/main" target="_blank">GitHub Repository</a>
-      <p>Full-stack: front + back. An online store for jewelry with full authentication, products, and orders.</p>
-    </div>
+      <div class="project">
+        <strong>JewelsStore</strong><br />
+        <a href="https://github.com/aromikayelyan/jewel-store/tree/main" target="_blank">GitHub Repository</a>
+        <p>Full-stack: front + back. An online store for jewelry with full authentication, products, and orders.</p>
+      </div>
 
-    <!-- Project 2 -->
-    <div class="project">
-      <strong>Authentication API</strong><br />
-      <a href="https://github.com/aromikayelyan/Node.js-Authentication-API" target="_blank">GitHub Repository</a>
-      <p>Backend for an authentication system with three requests in Insomnia.</p>
-    </div>
+      <div class="project">
+        <strong>Authentication API</strong><br />
+        <a href="https://github.com/aromikayelyan/Node.js-Authentication-API" target="_blank">GitHub Repository</a>
+        <p>Backend for an authentication system with three test requests in Insomnia.</p>
+      </div>
 
-    <!-- Project 3 -->
-    <div class="project">
-      <strong>Inventory and History Services</strong><br />
-      <a href="https://github.com/aromikayelyan/market-users-service/tree/main/market_service" target="_blank">GitHub Repository</a>
-      <p>Inventory management and event logging services for products.</p>
-    </div>
+      <div class="project">
+        <strong>Inventory and History Services</strong><br />
+        <a href="https://github.com/aromikayelyan/market-users-service/tree/main/market_service" target="_blank">GitHub Repository</a>
+        <p>Inventory tracking and event logging for product changes.</p>
+      </div>
 
-    <!-- Project 4 -->
-    <div class="project">
-      <strong>User Service (Nest.js)</strong><br />
-      <a href="https://github.com/aromikayelyan/market-users-service/tree/main/users_serivce" target="_blank">GitHub Repository</a>
-      <p>API for working with users, including creating and fetching user data.</p>
-    </div>
+      <div class="project">
+        <strong>User Service (Nest.js)</strong><br />
+        <a href="https://github.com/aromikayelyan/market-users-service/tree/main/users_serivce" target="_blank">GitHub Repository</a>
+        <p>API for managing users: create, retrieve, and update operations.</p>
+      </div>
 
-    <!-- Project 5 -->
-    <div class="project">
-      <strong>GetRepositories</strong><br />
-      <a href="https://github.com/aromikayelyan/GetRepositories" target="_blank">GitHub Repository</a>
-      <p>Application for working with the GitHub API to fetch popular repositories and save them to a database.</p>
-    </div>
+      <div class="project">
+        <strong>GetRepositories</strong><br />
+        <a href="https://github.com/aromikayelyan/GetRepositories" target="_blank">GitHub Repository</a>
+        <p>Application for fetching popular GitHub repositories and saving them to a database.</p>
+      </div>
+    </section>
 
-  </section>
+    <section>
+      <h2>📫 Contact</h2>
+      <ul class="contact-info">
+        <li><strong>Email:</strong> <a href="mailto:aromiq1@gmail.com">aromiq1@gmail.com</a></li>
+        <li><strong>WhatsApp:</strong> <a href="https://wa.me/+79180932204" target="_blank">Message on WhatsApp</a></li>
+      </ul>
 
-  <!-- Contact Section -->
-  <section>
-    <h2>📫 Contact</h2>
-    <ul class="contact-info">
-      <li class="section-title">Email:</li>
-      <li><a href="mailto:aromiq1@gmail.com">My e-mail</a></li>
-      <li class="section-title">WhatsApp:</li>
-      <li><a href="https://wa.me/+79180932204" target="_blank">Message me on WhatsApp</a></li>
-    </ul>
+      <h2>🌐 Socials</h2>
+      <ul class="social-links">
+        <li><a href="https://t.me/aromikayelyan" target="_blank">Telegram</a></li>
+        <li><a href="https://github.com/aromikayelyan" target="_blank">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/ararat-mikayelyan-6aaa80314" target="_blank">LinkedIn</a></li>
+      </ul>
 
-    <!-- CV Download Button -->
-    <a href="./Resume.pdf" class="cv-btn" download>Download CV</a>
-  </section>
+      <a href="./Resume.pdf" class="cv-btn" download>Download CV</a>
+    </section>
+  </div>
+
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        el.classList.remove('active');
+      });
+      document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
+    }
+  </script>
 
 </body>
 </html>
+
